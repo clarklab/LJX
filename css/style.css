@@ -21,8 +21,23 @@ a{
 	text-decoration: none;
 }
 
+/** COLORS **/
+
+.has-dark-background{
+	background-color: #000;
+}
+
+.has-dark-background *, .has-dark-background .types ul, .has-dark-background section.content{
+	color:#fff;
+	border-color:#fff;
+}
+
 header{
 	width:100%;
+}
+
+h1, .h1{
+	font-size:3rem;
 }
 
 h2, .h2{
@@ -32,13 +47,18 @@ h2, .h2{
 h3, .h3{
 	font-size:1.25rem;
 	line-height: 1.5;
+	font-weight: 300;
 }
 
 h5, .h5{
 	font-size:.85rem;
 }
 
-.entry-content{
+.regular{
+	font-weight: 300;
+}
+
+.entry-content {
 	color:#000;
 }
 
@@ -66,7 +86,7 @@ header .menu li{
 /** BORDERS **/
 
 .border-top, .border-bottom, .border-left, .border-right{
-	color:#FF0000;
+	border-color:#FF0000;
 }
 
 .block-content-pair:not(:last-child){
@@ -77,11 +97,20 @@ header .menu li{
 	border-bottom-style:solid;border-bottom-width:1px
 }
 
+.wp-block-group{
+	border-bottom-width:1px;
+	border-bottom-style: solid;
+}
+
 
 /** CONTENT CONTAINER **/
 
 section.content{
 	border:1px solid #FF0000;
+}
+
+.entry-content > *{
+	padding:0 2rem;
 }
 
 /** CONTENT TYPE NAV **/
