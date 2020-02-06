@@ -12,7 +12,7 @@
 body{
 	padding:0;
 	margin:0;
-	font-family: Univers, sans-serif;
+	font-family: "Untitled Sans", sans-serif;
 	font-size:1rem;
 	color:#FF0000;
 }
@@ -32,6 +32,10 @@ a{
 	border-color:#fff;
 }
 
+.has-dark-background .border-top, .has-dark-background .border-bottom, .has-dark-background .border-left, .has-dark-background .border-right{
+	border-color:#fff;
+}
+
 header{
 	width:100%;
 }
@@ -42,6 +46,7 @@ h1, .h1{
 
 h2, .h2{
 	font-size:2rem;
+	font-weight: 400;
 }
 
 h3, .h3{
@@ -55,7 +60,7 @@ h5, .h5{
 }
 
 .regular{
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .entry-content {
@@ -85,7 +90,7 @@ header .menu li{
 
 /** BORDERS **/
 
-.border-top, .border-bottom, .border-left, .border-right{
+.border-top, .border-bottom, .border-left, .border-right, button{
 	border-color:#FF0000;
 }
 
@@ -97,9 +102,14 @@ header .menu li{
 	border-bottom-style:solid;border-bottom-width:1px
 }
 
-.wp-block-group{
+.wp-block-group, .wp-block-image-grid{
 	border-bottom-width:1px;
 	border-bottom-style: solid;
+}
+
+.wp-block-image-grid div:not(:last-child){
+	border-right-width: 1px;
+	border-right-style: solid;
 }
 
 
@@ -160,8 +170,12 @@ footer form{
 footer input{
 	width:65%;
 	border:0;
-	border:1px solid #FF0000;
+	border-width:1px;
+	border-style:solid;
+	background-color:transparent;
 }
+
+
 footer button{
 	width:35%;
 }
@@ -177,11 +191,73 @@ input::placeholder{
 	color:#FF0000;
 }
 
+.has-dark-background input, .has-dark-background input::placeholder{
+	color:#fff;
+}
+
 button{
 	background:#FF0000;
-	border:1px solid #FF0000;
+	border-width:1px;
+	border-style:solid;
 	color:#fff;
 	font-size:1rem;
 	padding:1rem;
 	margin:0;
+	cursor: pointer;
 } 
+
+.has-dark-background button{
+	color:#000;
+	background-color: #fff;
+}
+
+/** COL/RESPONSIVE SIZING **/
+
+.wp-block-group.alignwide > *{
+	max-width: 58.333333%
+}
+
+.wp-block-image-grid {
+	padding:0;
+}
+.wp-block-image-grid div{
+	width:20%;
+}
+
+
+/** RELATED BLOCK **/
+
+.wp-block-related {
+	padding:0;
+	border-bottom-width: 1px;
+	border-bottom-style:solid;
+}
+
+.wp-block-related .image{
+	position: relative;
+	padding-top:100%;
+}
+
+.wp-block-related .image img{
+	position: absolute;
+	max-height:80%;
+	width:auto;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+}
+
+@media screen and (min-width:52em){
+
+	.wp-block-related .item:not(:last-child){
+		margin-right:.8rem;
+		border-right-width:1px;
+		border-right-style:solid;
+	}
+	.wp-block-related .item:not(:first-child){
+		margin-left:.8rem;
+		border-left-width:1px;
+		border-left-style:solid;
+	}
+}
+
